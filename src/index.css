@@ -1,5 +1,214 @@
-body {
+body{
+  position: absolute;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
   margin: 0;
-  padding: 0;
-  font-family: sans-serif;
 }
+
+@media (max-width:1200px){
+  body{
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .main-content{
+    padding-right: 10px;
+  }
+}
+
+@font-face{
+  font-family: Segoe UI;
+  src: url("font/SegoeUI-Bold.ttf")
+}
+
+.main-content{
+  position: static;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row; 
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  min-width: 1200px;
+  min-height: 720px;
+}
+
+.game-state{
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  width: 480px;
+  height: 720px;
+  margin-right: 30px;
+}
+
+.players{
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row; 
+  justify-content: center;
+  height: 220px;
+  margin-bottom: 30px; 
+}
+
+.green-player-state{
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column; 
+  background-color: #25B79F;
+  text-align: center;
+  width: 50%;
+  border-bottom: 1px #979797 solid;
+  border-right: 1px #979797 solid;
+  border-top:1px #979797 solid;
+}
+
+.yellow-player-state{
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column; 
+  background-color: #FFB000;
+  text-align: center;
+  width: 50%;
+  border-bottom: 1px #979797 solid;
+  border-left: 1px #979797 solid;
+  border-top:1px #979797 solid;
+}
+
+.player-points{
+  font-family: "Segoe UI", sans-serif;
+  color: #4A4A4A;
+  font-size: 60px;
+  margin: 30px 0 30px 0;
+}
+
+.player-name{
+  font-size: 30px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #4A4A4A;
+  margin: 0 20px 0px 20px;
+  border-top: 1px solid #4A4A4A;
+  padding: 20px 25px 20px 25px;
+}
+
+.fleet-state{
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column; 
+  align-content: flex-start;
+  align-items: stretch;
+  height: 470px;
+}
+
+.ship-state{
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row; 
+  align-items: flex-end;
+  align-content: flex-end;
+  justify-content: flex-start;
+}
+
+.ship-state-icons{
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  width:50%;
+}
+
+.ship{
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 50%;
+  height: 65px;
+  margin-bottom: 30px;
+}
+
+.aircraft{
+  background-image: url("pics/aircraft.png");
+
+}
+
+.battleship{
+  background-image: url("pics/battleship.png");
+}
+
+.cruiser{
+  background-image: url("pics/cruiser.png");
+}
+
+.submarine{
+  background-image: url("pics/submarine.png");
+}
+
+.carrier{
+  background-image: url("pics/carrier.png");
+}
+
+.ship-live{
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 20px;
+  height: 20px;
+  margin: 0px 0px 30px 20px;
+  padding-bottom: 10px;
+}
+
+.undamaged{
+  background-image: url("pics/miss.small.png");
+}
+
+.damaged{
+  background-image: url("pics/hit.small.png");
+}
+
+.game-field{
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; 
+  height: 100%;
+  width: 710px;
+  height: 710px;
+  min-width: 710px;
+  outline: 4px solid #FDB200;
+  border-right: 1px #979797 solid;
+  border-bottom: 1px #979797 solid;
+}
+
+.game-field-row{
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row; 
+}
+
+.cell{
+  background-color: white;
+  border-top: 1px solid ;
+  border-left: 1px solid;
+  border-color: #979797;
+  height: 70px;
+  width: 70px;
+}
+
+.miss-cell{
+  background-image:url("pics/miss.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.hit-cell{
+  background-image:url("pics/hit.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+

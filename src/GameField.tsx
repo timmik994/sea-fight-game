@@ -1,0 +1,110 @@
+import * as React from 'react';
+
+export class GameFieldComponent extends React.Component {
+    public render() {
+        return (
+            <div id="game-field" className="game-field">
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell miss-cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell miss-cell" />
+                <div className="cell" />
+                <div className="cell miss" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell hit-cell" />
+                <div className="cell hit-cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell miss-cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+                <div className="cell" />
+            </div>
+        )
+    }
+}
