@@ -23,9 +23,8 @@ export class FleetStateComponent extends React.Component<{}, IFleetState>
     public render() {
         return (
             <div id="fleet-state" className="fleet-state">
-                {this.state.Ships.map((ship,i) => {
-                    return (<ShipStateComponent key={i} ShipName={ship.Name} LivesCount={ship.LivesCount} HitCount={ship.HitCount} />);
-                })
+                {
+                    this.state.Ships.map((ship, i) => <ShipStateComponent key={i} ShipName={ship.Name} LivesCount={ship.LivesCount} HitCount={ship.HitCount} />)
                 }
             </div>
         );

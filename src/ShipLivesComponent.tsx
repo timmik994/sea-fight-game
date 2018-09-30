@@ -23,9 +23,7 @@ export class ShipLivesComponent extends React.Component<IShipLivesProps, IShipLi
         return (
             <div className="ship-state-icons">
             {
-                this.state.LiveStates.map((state,i)=>{
-                    return  <div key = {i} className = {"ship-live "+state} />
-                })
+                this.state.LiveStates.map((state,i) => <div key = {i} className = {"ship-live "+state} />)
             }
             </div>
            

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { GameFieldComponent } from './GameField';
+import { GameFieldComponent } from './GameFieldComponent';
 import { GameStateComponent } from './GameStateComponent';
 
 class App extends React.Component {
