@@ -1,17 +1,17 @@
 // Single ship.
 export class Ship {
     // Ship name.
-    public Name: string;
+    public name: string;
 
     // Lives count.
-    public LivesCount: number;
+    public livesCount: number;
 
     // Hits count.
-    public HitCount: number;
+    public hitCount: number;
 
     constructor(name: string, livesCount: number, hitCount: number) {
-        this.Name = name;
-        this.LivesCount = livesCount;
-        this.HitCount = hitCount;
+        this.name = name;
+        this.livesCount = livesCount;
+        this.hitCount = hitCount;
     }
 }

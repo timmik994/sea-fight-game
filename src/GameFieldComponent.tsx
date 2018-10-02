@@ -1,13 +1,15 @@
 import * as React from 'react';
-import {CellComponent, CellState} from './CellComponent';
+import {CellComponent} from './CellComponent';
+import { CellState } from './DataModels/CellState';
 
 // Game field.
 export class GameFieldComponent extends React.Component<{}, IGameFieldState> {
 
-    constructor(props:{}){
+    constructor(props: {}) {
+
         super(props);
         const fieldState: CellState[] = [];
-        for(let i=0;i<100;i++ ){
+        for (let i = 0; i < 100; i++) {
             fieldState.push(CellState.Unshotted);
         }
         fieldState[2] = CellState.Missed;
@@ -17,21 +19,27 @@ export class GameFieldComponent extends React.Component<{}, IGameFieldState> {
         fieldState[91] = CellState.Missed;
         this.state = {
             Cells: fieldState
-        }
+        };
+
     }
 
     public render() {
+
         return (
-            <div id="game-field" className="game-field">
+            <div id='game-field' className='game-field'>
                 {
-                    this.state.Cells.map((cellState,i) => <CellComponent State = {cellState} key = {i} />)
+                    this.state.Cells.map((cellState, i) => <CellComponent State = {cellState} key = {i} />)
                 }
             </div>
-        )
+        );
+
     }
+
 }
 
-interface IGameFieldState{
+interface IGameFieldState {
+
     // Array of cell states.
-    Cells:CellState[];
+    Cells: CellState[];
+
 }
