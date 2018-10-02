@@ -28,7 +28,7 @@ export class GameFieldComponent extends React.Component<{}, IGameFieldState> {
         return (
             <div id='game-field' className='game-field'>
                 {
-                    this.state.Cells.map((cellState, i) => <CellComponent State = {cellState} key = {i} />)
+                    this.state.Cells.map((cellState, i) => <CellComponent Id = {i} State = {cellState} key = {i} />)
                 }
             </div>
         );
