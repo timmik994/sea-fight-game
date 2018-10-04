@@ -1,5 +1,4 @@
 export enum CellState {
-
     // Cell don't shooted.
     Unshotted,
 
@@ -8,5 +7,4 @@ export enum CellState {
 
     // Cell shooted and have ship.
     Hitted
-
 }

@@ -1,20 +1,16 @@
 import * as React from 'react';
-import { GameFieldComponent } from './GameFieldComponent';
-import { GameStateComponent } from './GameStateComponent';
+import { GameStateComponent } from './components/GameStateComponent';
+import { GameFieldContainer } from './containers/GameFieldContainer';
 
 class App extends React.Component {
-
   public render() {
-
     return (
-      <div className='main-content'>
+      <div className="main-content">
           <GameStateComponent />
-          <GameFieldComponent />
+          <GameFieldContainer />
       </div>
     );
-
   }
-
 }
 
 export default App;

@@ -1,32 +1,28 @@
 import * as React from 'react';
-import { CellState } from './DataModels/CellState';
+import { CellState } from '../DataModels/CellState';
 
 // Cell in game field.
 export class CellComponent extends React.Component<ICellComponentProps, ICellComponentState> {
-
     constructor(props: ICellComponentProps) {
         super(props);
         let clicked = true;
         if (this.props.State === CellState.Unshotted) {
             clicked = false;
         }
-
+        
         this.state = {
             IsClicked: clicked,
             IsHighlighted: false,
-            State: this.props.State
         };
 
         this.MouseOut = this.MouseOut.bind(this);
         this.MouseOver = this.MouseOver.bind(this);
-        this.Shoot = this.Shoot.bind(this);
     }
 
     public render() {
-
-        return <div onMouseOver={this.MouseOver} onMouseOut={this.MouseOut} onClick={this.Shoot}
+        return <div onMouseOver={this.MouseOver} onMouseOut={this.MouseOut} 
+        onClick={() => this.props.onShoot(this.props.Id)}
         className={`${this.GetBaseCellClass()} ${this.GetCellClass()}`} />;
-
     }
 
     // Gets class for basic or highlighted cell.
@@ -56,49 +52,32 @@ export class CellComponent extends React.Component<ICellComponentProps, ICellCom
         }
     }
 
-    // This method called when cell is clicked.
-    private Shoot() {
-        if (!this.state.IsClicked) {
-            this.setState({
-                IsClicked: true,
-                IsHighlighted: false,
-                State: CellState.Missed
-            });
-        }
-    }
-
     // Gets cell class name from CellState.
     private GetCellClass() {
-
-        switch (this.state.State) {
+        switch (this.props.State) {
             case CellState.Unshotted: return '';
             case CellState.Missed: return 'miss-cell';
             case CellState.Hitted: return 'hit-cell';
+            default: return '';
         }
-
     }
-
 }
 
 interface ICellComponentState {
-
     // Is cell clicked.
     IsClicked: boolean;
 
     // Does cell needed to be highlighted.
     IsHighlighted: boolean;
-
-    // State of the cell.
-    State: CellState;
-
 }
 
 interface ICellComponentProps {
-
     // State of the cell
     State: CellState;
 
     // Id of the cell
     Id: number;
 
+    // Shoot to cell
+    onShoot(id: number): void;
 }
