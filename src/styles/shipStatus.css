@@ -1,0 +1,37 @@
+.ship-state {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    align-content: flex-end;
+    justify-content: flex-start;
+}
+
+.ship {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 50%;
+    height: 65px;
+    margin-bottom: 30px;
+}
+
+.aircraft {
+    background-image: url("../pics/aircraft.png");
+}
+
+.battleship {
+    background-image: url("../pics/battleship.png");
+}
+
+.cruiser {
+    background-image: url("../pics/cruiser.png");
+}
+
+.submarine {
+    background-image: url("../pics/submarine.png");
+}
+
+.carrier {
+    background-image: url("../pics/carrier.png");
+}

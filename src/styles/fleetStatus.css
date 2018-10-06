@@ -1,0 +1,8 @@
+.fleet-state {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: stretch;
+    height: 470px;
+}

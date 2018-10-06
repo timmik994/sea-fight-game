@@ -1,10 +1,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import App from './App';
+import App from './components/app';
 import './index.css';
-import registerServiceWorker from './registerServiceWorker';
 import { createStore } from 'redux';
-import { gameReducer } from './reducers/reducers';
+import { gameReducer } from './reducers/gameReducer';
 import { Provider } from 'react-redux';
 
 const store = createStore(gameReducer);
@@ -15,4 +14,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root') as HTMLElement
 );
-registerServiceWorker();

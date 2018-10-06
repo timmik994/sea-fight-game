@@ -2,10 +2,8 @@
 export class Ship {
     // Ship name.
     public name: string;
-
     // Lives count.
     public livesCount: number;
-
     // Hits count.
     public hitCount: number;
 

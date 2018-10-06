@@ -1,0 +1,9 @@
+.players {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 220px;
+    margin-bottom: 30px;
+    border: 1px #979797 solid;
+}

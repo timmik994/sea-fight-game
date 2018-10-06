@@ -1,0 +1,18 @@
+@media (max-width:1200px){
+    .main-content{
+      padding-right: 10px;
+    }
+  }
+
+.main-content{
+    position: static;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row; 
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    min-width: 1200px;
+    min-height: 720px;
+  }
