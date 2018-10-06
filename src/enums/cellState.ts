@@ -1,6 +1,6 @@
 export enum CellState {
     // Cell don't shooted.
-    Unshotted,
+    Unshooted,
     // Cell sooted but empty.
     Missed,
     // Cell shooted and have ship.
