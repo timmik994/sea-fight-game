@@ -3,12 +3,12 @@ import '../styles/shipLives.css';
 
 export class ShipLives extends React.Component<ShipLivesProps, {}> {
     public renderRemainingLives() {
-       const count = this.getRemainingLivesCount();
-       const lives = [];
-       for (let i = 0; i < count; i++) {
-           lives.push(<div key={i} className={'ship-live undamaged'} />);
-       }
-       return lives;
+        const count = this.getRemainingLivesCount();
+        const lives = [];
+        for (let i = 0; i < count; i++) {
+            lives.push(<div key={i} className={'ship-live undamaged'} />);
+        }
+        return lives;
     }
 
     public renderHittedLives() {
@@ -23,12 +23,12 @@ export class ShipLives extends React.Component<ShipLivesProps, {}> {
     public render() {
         return (
             <div className="ship-state-icons">
-            {
-               this.renderHittedLives()
-            }
-            {
-                this.renderRemainingLives()
-            }
+                {
+                    this.renderHittedLives()
+                }
+                {
+                    this.renderRemainingLives()
+                }
             </div>
         );
     }

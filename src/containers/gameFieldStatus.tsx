@@ -12,4 +12,4 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
     onShoot: (id: number) => dispatch(shootCell(id))
 });
 
-export const GameFieldStatus = connect(mapStateToProps, mapDispatchToProps) (GameField);
+export const GameFieldStatus = connect(mapStateToProps, mapDispatchToProps)(GameField);

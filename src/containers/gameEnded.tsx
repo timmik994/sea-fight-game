@@ -9,7 +9,7 @@ const mapStateToProps = (state: GameState) => ({
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-    onNewGame: () => dispatch(createNewGameAction()) 
+    onNewGame: () => dispatch(createNewGameAction())
 });
 
-export const GameEnded = connect(mapStateToProps, mapDispatchToProps) (EndGame);
+export const GameEnded = connect(mapStateToProps, mapDispatchToProps)(EndGame);
