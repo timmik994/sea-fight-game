@@ -15,14 +15,14 @@ export class GameCell extends React.Component<GameCellProps, GameCellState> {
     }
 
     public render() {
-        return <div onMouseOver={this.onMouseOver} onMouseOut={this.onMouseOut} 
-        onClick={() => this.shootCell()}
-        className={`${this.getBaseCellClass()} ${this.getCellClass()}`} />;
+        return <div onMouseOver={this.onMouseOver} onMouseOut={this.onMouseOut}
+            onClick={() => this.shootCell()}
+            className={`${this.getBaseCellClass()} ${this.getCellClass()}`} />;
     }
 
     // Gets class for basic or highlighted cell.
     private getBaseCellClass(): string {
-        if (this.state.isHighlighted && this.props.state === CellState.Unshooted ) {
+        if (this.state.isHighlighted && this.props.state === CellState.Unshooted) {
             return 'highlighted-cell';
         } else {
             return 'cell';
@@ -30,19 +30,15 @@ export class GameCell extends React.Component<GameCellProps, GameCellState> {
     }
 
     private onMouseOver() {
-        if (this.props.state === CellState.Unshooted) {
-            this.setState({
-                isHighlighted: true
-            });
-        }
+        this.setState({
+            isHighlighted: true
+        });
     }
 
     private onMouseOut() {
-        if (this.props.state === CellState.Unshooted) {
-            this.setState({
-                isHighlighted: false
-            });
-        }
+        this.setState({
+            isHighlighted: false
+        });
     }
 
     private shootCell() {

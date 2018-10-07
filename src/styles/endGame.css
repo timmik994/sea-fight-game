@@ -1,0 +1,26 @@
+.game-ended {
+  background-color: #25B79F;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border: solid;
+  border-color: #979797;
+  border-radius: 5px;
+}
+
+.win-text {
+  font-family: "Segoe UI", sans-serif;
+  font-size: 40px;
+  margin: 10px;
+}
+
+.new-game-button {
+  border-color: #FDB200;
+  border-radius: 4px;
+  background-color: white;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 40px;
+  margin: 10px;
+}

@@ -15,4 +15,11 @@
     align-content: center;
     min-width: 1200px;
     min-height: 720px;
-  }
+}
+
+.main{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}

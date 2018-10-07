@@ -2,6 +2,8 @@ import { Ship } from '../DataModels/ship';
 import { CellState } from '../enums/cellState';
 import { shootAction, ShootAction } from '../actions/shootAction';
 import { Action, Reducer } from 'redux';
+import { GameFieldHelper } from '../helpers/gameFieldHelper';
+import { newGameAction, NewGameAction } from '../actions/newGameAction';
 
 export const gameReducer: Reducer<GameState> = (state: GameState, action: Action) => {
     if (state == undefined) {
@@ -23,11 +25,22 @@ export const gameReducer: Reducer<GameState> = (state: GameState, action: Action
                 markKilledShip(cellNum, cellStates, state.shipsPositions);
             }
         }
-
+        const isWon = shipStates.every(ship => ship.livesCount === ship.hitCount);
         state = {
             cellStates: cellStates,
             fleet: shipStates,
-            shipsPositions: state.shipsPositions
+            shipsPositions: state.shipsPositions,
+            win: isWon
+        };
+    }
+
+    if (action.type === newGameAction) {
+        const newGame = action as NewGameAction;
+        state = {
+            cellStates: Array(100).fill(CellState.Unshooted),
+            fleet: newGame.ships,
+            shipsPositions: newGame.shipPositions,
+            win: false
         };
     }
 
@@ -40,27 +53,15 @@ function initGameState(): GameState {
         cellsStates.push(CellState.Unshooted);
     }
 
-    const ships: Ship[] = [
-        new Ship('aircraft', 5, 0),
-        new Ship('battleship', 4, 0),
-        new Ship('cruiser', 3, 0),
-        new Ship('submarine', 3, 0),
-        new Ship('carrier', 2, 0)
-    ];
+    const ships: Ship[] = [];
 
     const shipPositions: number[] = Array(100).fill(-1);
-
-    for (let i = 0; i < ships.length; i++) {
-        let rowNumber = i + (i * 10 * 2);
-        for (let j = 0; j < ships[i].livesCount; j++) {
-            shipPositions[rowNumber + j] = i;
-        }
-    }
 
     const gameState: GameState = {
         cellStates: cellsStates,
         fleet: ships,
-        shipsPositions: shipPositions
+        shipsPositions: shipPositions,
+        win: false
     };
 
     return gameState;
@@ -71,34 +72,34 @@ function markKilledShip(shipIndex: number, cellStates: CellState[], shipPosition
     for (let i = 0; i < cellStates.length; i++) {
         if (shipPositions[i] === shipIndex) {
             // check is cells around current cell are exists.
-            const hasLeftCell = i % 10 > 0;
-            const hasRightCell = i % 10 < 9;
-            const hasDownCell = i + 10 < 100;
-            const hasUpCell = i - 10 > 0;
+            const hasLeftCell = GameFieldHelper.hasCellLeft(i);
+            const hasRightCell = GameFieldHelper.hasCellRight(i);
+            const hasDownCell = GameFieldHelper.hasCellDown(i);
+            const hasUpCell = GameFieldHelper.hasCellUp(i);
 
             if (hasLeftCell) {
-                markUnshootedAsMissed(i - 1, cellStates);
+                markUnshootedAsMissed(GameFieldHelper.leftCell(i), cellStates);
             }
             if (hasRightCell) {
-                markUnshootedAsMissed(i + 1, cellStates);
+                markUnshootedAsMissed(GameFieldHelper.rightCell(i), cellStates);
             }
             if (hasDownCell) {
-                markUnshootedAsMissed(i + 10, cellStates);
+                markUnshootedAsMissed(GameFieldHelper.downCell(i), cellStates);
             }
             if (hasUpCell) {
-                markUnshootedAsMissed(i - 10, cellStates);
+                markUnshootedAsMissed(GameFieldHelper.upCell(i), cellStates);
             }
             if (hasLeftCell && hasUpCell) {
-                markUnshootedAsMissed(i - 10 - 1, cellStates);
+                markUnshootedAsMissed(GameFieldHelper.leftUpCell(i), cellStates);
             }
             if (hasLeftCell && hasDownCell) {
-                markUnshootedAsMissed(i + 10 - 1, cellStates);
+                markUnshootedAsMissed(GameFieldHelper.leftDownCell(i), cellStates);
             }
             if (hasRightCell && hasUpCell) {
-                markUnshootedAsMissed(i - 10 + 1, cellStates);
+                markUnshootedAsMissed(GameFieldHelper.rightUpCell(i), cellStates);
             }
             if (hasRightCell && hasDownCell) {
-                markUnshootedAsMissed(i + 10 + 1, cellStates);
+                markUnshootedAsMissed(GameFieldHelper.rightDownCell(i), cellStates);
             }
         }
     }
@@ -115,6 +116,7 @@ export interface GameState {
     shipsPositions: number[];
     cellStates: CellState[];
     fleet: Ship[];
+    win: boolean;
 }
 
 export interface State {

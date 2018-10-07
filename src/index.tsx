@@ -5,8 +5,11 @@ import './index.css';
 import { createStore } from 'redux';
 import { gameReducer } from './reducers/gameReducer';
 import { Provider } from 'react-redux';
+import { createNewGameAction } from './actions/newGameAction';
 
 const store = createStore(gameReducer);
+const newGameAction = createNewGameAction();
+store.dispatch(newGameAction);
 
 ReactDOM.render(
   <Provider store = {store} >
