@@ -6,39 +6,12 @@ import '../styles/seaCell.css';
 export class GameCell extends React.Component<GameCellProps, GameCellState> {
     constructor(props: GameCellProps) {
         super(props);
-        this.state = {
-            isHighlighted: false,
-        };
-        this.onMouseOut = this.onMouseOut.bind(this);
-        this.onMouseOver = this.onMouseOver.bind(this);
+
         this.shootCell = this.shootCell.bind(this);
     }
 
     public render() {
-        return <div onMouseOver={this.onMouseOver} onMouseOut={this.onMouseOut}
-            onClick={() => this.shootCell()}
-            className={`${this.getBaseCellClass()} ${this.getCellClass()}`} />;
-    }
-
-    // Gets class for basic or highlighted cell.
-    private getBaseCellClass(): string {
-        if (this.state.isHighlighted && this.props.state === CellState.Unshooted) {
-            return 'highlighted-cell';
-        } else {
-            return 'cell';
-        }
-    }
-
-    private onMouseOver() {
-        this.setState({
-            isHighlighted: true
-        });
-    }
-
-    private onMouseOut() {
-        this.setState({
-            isHighlighted: false
-        });
+        return <div onClick={() => this.shootCell()} className={`cell ${this.getCellClass()}`} />;
     }
 
     private shootCell() {
@@ -52,6 +25,7 @@ export class GameCell extends React.Component<GameCellProps, GameCellState> {
         switch (this.props.state) {
             case CellState.Missed: return 'miss-cell';
             case CellState.Hitted: return 'hit-cell';
+            case CellState.Unshooted: return 'base-cell';
             default: return '';
         }
     }

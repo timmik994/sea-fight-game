@@ -1,4 +1,3 @@
-import { Ship } from '../DataModels/ship';
 import { CellState } from '../enums/cellState';
 import { shootAction, ShootAction } from '../actions/shootAction';
 import { Action, Reducer } from 'redux';
@@ -20,7 +19,7 @@ export const gameReducer: Reducer<GameState> = (state: GameState, action: Action
             cellStates[shootedIndex] = CellState.Missed;
         } else {
             cellStates[shootedIndex] = CellState.Hitted;
-            shipStates[cellNum] = new Ship(state.fleet[cellNum].name, state.fleet[cellNum].livesCount, state.fleet[cellNum].hitCount + 1);
+            shipStates[cellNum] = createShip(state.fleet[cellNum].name, state.fleet[cellNum].livesCount, state.fleet[cellNum].hitCount + 1);
             if (shipStates[cellNum].hitCount === shipStates[cellNum].livesCount) {
                 markKilledShip(cellNum, cellStates, state.shipsPositions);
             }
@@ -112,6 +111,15 @@ function markUnshootedAsMissed(index: number, cellStates: CellState[]) {
     }
 }
 
+export function createShip (name: string, livesCount: number, hitCount: number): Ship {
+    const ship: Ship = {
+        name: name,
+        hitCount: hitCount,
+        livesCount: livesCount
+    };
+    return ship;
+}
+
 export interface GameState {
     shipsPositions: number[];
     cellStates: CellState[];
@@ -121,4 +129,13 @@ export interface GameState {
 
 export interface State {
     gameState: GameState;
+}
+
+export interface Ship {
+    // Ship name.
+    name: string;
+    // Lives count.
+    livesCount: number;
+    // Hits count.
+    hitCount: number;
 }

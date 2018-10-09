@@ -1,7 +1,7 @@
-import { Ship } from '../DataModels/ship';
 import { ShipDirection } from '../enums/shipDirection';
 import { GameFieldHelper } from '../helpers/gameFieldHelper';
 import { Action } from 'redux';
+import { createShip, Ship } from '../reducers/gameReducer';
 
 export const newGameAction = 'NEW_GAME';
 
@@ -14,11 +14,11 @@ export function createNewGameAction(): NewGameAction {
     const shipPositions: number[] = Array(100).fill(-1);
     const emptyCells: boolean[] = Array(100).fill(true);
     const ships: Ship[] = [
-        new Ship('aircraft', 5, 0),
-        new Ship('battleship', 4, 0),
-        new Ship('cruiser', 3, 0),
-        new Ship('submarine', 3, 0),
-        new Ship('carrier', 2, 0)
+        createShip('aircraft', 5, 0),
+        createShip('battleship', 4, 0),
+        createShip('cruiser', 3, 0),
+        createShip('submarine', 3, 0),
+        createShip('carrier', 2, 0)
     ];
     for (let i = 0; i < ships.length; i++) {
         let shipSet = false;

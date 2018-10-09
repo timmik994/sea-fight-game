@@ -7,13 +7,8 @@
     width: 70px;
 }
 
-.highlighted-cell {
-    background-color: #979797;
-    border-top: 1px solid;
-    border-left: 1px solid;
-    border-color: #979797;
-    height: 70px;
-    width: 70px;
+.base-cell:hover {
+    background-color: #AAAAAA
 }
 
 .miss-cell {

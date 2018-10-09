@@ -30,7 +30,9 @@
 }
 
 .line {
-  width: 80%;
   align-self: center;
-  border-bottom: 1px solid #4A4A4A;
+  box-sizing: border-box;
+  height: 2px;
+  background-color: #4A4A4A;
+  width: 80%;
 }

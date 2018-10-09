@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ShipStatus } from './shipStatus';
-import { Ship } from '../DataModels/ship';
-import '../styles/fleetStatus.css';
+import '../styles/fleet.css';
+import { Ship } from '../reducers/gameReducer';
 
 // State of fleet on field.
 export class Fleet extends React.Component<FleetProps, {}> {
