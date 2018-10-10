@@ -4,17 +4,15 @@
     flex-direction: row;
     flex-basis: 25px;
     width: 50%;
+    flex: 1 0 auto;
 }
 
 .ship-live {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
-    margin: 0px 0px 30px 20px;
-    width: 25px;
-    height: 25px;
-    padding-bottom: 10px;
-    align-self: stretch;
+    background-size: 25px;
+    flex-basis: 40px;
 }
 
 .undamaged {

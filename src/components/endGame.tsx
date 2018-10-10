@@ -6,9 +6,11 @@ export class EndGame extends React.Component<EndGameProps, {}> {
     public renderIfGameEnded() {
         if (this.props.gameEnded) {
             return (
-                <div className="game-ended" >
-                    <label className="win-text" >You won!!!</label>
-                    <button className="new-game-button" onClick={() => this.props.onNewGame()}>Play again.</button>
+                <div className="modal" >
+                    <div className="game-ended" >
+                        <label className="win-text" >You won!!!</label>
+                        <button className="new-game-button" onClick={() => this.props.onNewGame()}>Play again</button>
+                    </div>
                 </div>);
         } else {
             return '';

@@ -1,5 +1,15 @@
+.modal {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
 .game-ended {
-  background-color: #25B79F;
+  background-color: darkturquoise;
   display: flex;
   position: absolute;
   flex-direction: column;
@@ -8,12 +18,14 @@
   border: solid;
   border-color: #979797;
   border-radius: 5px;
+  overflow: auto;
 }
 
 .win-text {
   font-family: "Segoe UI", sans-serif;
-  font-size: 40px;
-  margin: 10px;
+  font-size: 60px;
+  color: #4A4A4A;
+  margin: 40px;
 }
 
 .new-game-button {
@@ -21,6 +33,10 @@
   border-radius: 4px;
   background-color: white;
   font-family: "Segoe UI", sans-serif;
-  font-size: 40px;
-  margin: 10px;
+  text-align: center;
+  vertical-align: middle;
+  color: #4A4A4A;
+  font-size: 50px;
+  margin: 0px 20px 20px 20px;
+  padding-bottom: 10px;
 }

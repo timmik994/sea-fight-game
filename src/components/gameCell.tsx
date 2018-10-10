@@ -6,7 +6,6 @@ import '../styles/seaCell.css';
 export class GameCell extends React.Component<GameCellProps, GameCellState> {
     constructor(props: GameCellProps) {
         super(props);
-
         this.shootCell = this.shootCell.bind(this);
     }
 

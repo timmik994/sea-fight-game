@@ -2,8 +2,8 @@
     display: -webkit-flex;
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
     justify-content: flex-start;
+    flex: 1 0 auto;
 }
 
 .ship {
