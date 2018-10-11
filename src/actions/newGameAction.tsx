@@ -2,6 +2,7 @@ import { ShipDirection } from '../enums/shipDirection';
 import { GameFieldHelper } from '../helpers/gameFieldHelper';
 import { Action } from 'redux';
 import { createShip, Ship } from '../reducers/gameReducer';
+import { FleetSettings } from '../settings/fleetSettings';
 
 export const newGameAction = 'NEW_GAME';
 
@@ -13,13 +14,12 @@ export interface NewGameAction extends Action {
 export function createNewGameAction(): NewGameAction {
   const shipPositions: number[] = Array(100).fill(-1);
   const emptyCells: boolean[] = Array(100).fill(true);
-  const ships: Ship[] = [
-    createShip('aircraft', 5, 0),
-    createShip('battleship', 4, 0),
-    createShip('cruiser', 3, 0),
-    createShip('submarine', 3, 0),
-    createShip('carrier', 2, 0)
-  ];
+  const ships: Ship[] = [];
+  FleetSettings.fleet.forEach(shipType => {
+    for (let i = 0; i < shipType.count; i++) {
+      ships.push(createShip(shipType.name, shipType.size, 0));
+    }
+  });
   for (let i = 0; i < ships.length; i++) {
     let shipSet = false;
     while (!shipSet) {
