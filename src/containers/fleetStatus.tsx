@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Fleet } from '../components/fleet';
 
 const mapStateToProps = (state: GameState) => ({
-    ships: state.fleet
+  ships: state.fleet
 });
 
 export const FleetStatus = connect(mapStateToProps, {})(Fleet);

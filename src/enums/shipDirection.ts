@@ -1,4 +1,6 @@
 export enum ShipDirection {
-    Down,
-    Right
+  // Ship located from top to bottom.
+  Down,
+  // Ship located from left ot right.
+  Right
 }

@@ -3,28 +3,28 @@ import '../styles/endGame.css';
 
 // End game component.
 export class EndGame extends React.Component<EndGameProps, {}> {
-    public renderIfGameEnded() {
-        if (this.props.gameEnded) {
-            return (
-                <div className="modal" >
-                    <div className="game-ended" >
-                        <label className="win-text" >You won!!!</label>
-                        <button className="new-game-button" onClick={() => this.props.onNewGame()}>Play again</button>
-                    </div>
-                </div>);
-        } else {
-            return '';
-        }
+  public renderIfGameEnded() {
+    if (this.props.gameEnded) {
+      return (
+        <div className="modal">
+          <div className="game-ended">
+            <label className="win-text" >You won!!!</label>
+            <button className="new-game-button" onClick={() => this.props.onNewGame()}>Play again</button>
+          </div>
+        </div>);
+    } else {
+      return '';
     }
+  }
 
-    public render() {
-        return this.renderIfGameEnded();
-    }
+  public render() {
+    return this.renderIfGameEnded();
+  }
 }
 
 interface EndGameProps {
-    // Indicates end of the game.
-    gameEnded: boolean;
-    // Invokes action that creates new game.
-    onNewGame(): void;
+  // Indicates end of the game.
+  gameEnded: boolean;
+  // Invokes action that creates new game.
+  onNewGame(): void;
 }

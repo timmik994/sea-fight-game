@@ -1,4 +1,6 @@
 export enum PlayerColor {
-    Green,
-    Yellow
+  // Player state is green.
+  Green,
+  // Player state is yellow.
+  Yellow
 }

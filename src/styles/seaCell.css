@@ -1,25 +1,25 @@
 .cell {
-    background-color: white;
-    border-top: 1px solid;
-    border-left: 1px solid;
-    border-color: #979797;
-    flex-basis: 70px;
+  background-color: white;
+  border-top: 1px solid;
+  border-left: 1px solid;
+  border-color: #979797;
+  flex-basis: 70px;
 }
 
 .base-cell:hover {
-    background-color: #DDDDDD;
+  background-color: #DDDDDD;
 }
 
 .miss-cell {
-    background-image: url("../pics/miss.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
+  background-image: url("../pics/miss.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .hit-cell {
-    background-image: url("../pics/hit.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
+  background-image: url("../pics/hit.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
 }

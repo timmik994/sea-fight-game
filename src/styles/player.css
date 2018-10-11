@@ -30,9 +30,8 @@
 }
 
 .line {
-  align-self: center;
-  box-sizing: border-box;
-  height: 2px;
+  align-self: stretch;
+  height: 1px;
   background-color: #4A4A4A;
-  width: 80%;
+  margin: 0px 25px 0px 25px;
 }

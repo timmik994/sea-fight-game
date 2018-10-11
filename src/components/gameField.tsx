@@ -5,21 +5,20 @@ import '../styles/seaField.css';
 
 // Game field.
 export class GameField extends React.Component<SeaFieldProps, {}> {
-    public render() {
-        return (
-            <div id="game-field" className="game-field">
-                {
-                    this.props.cells.map((cellState, i) => <GameCell onShoot={this.props.onShoot} id={i} state={cellState} key={i} />)
-                }
-            </div>
-        );
-    }
-
+  public render() {
+    return (
+      <div id="game-field" className="game-field">
+        {
+          this.props.cells.map((cellState, i) => <GameCell onShoot={this.props.onShoot} id={i} state={cellState} key={i} />)
+        }
+      </div>
+    );
+  }
 }
 
 export interface SeaFieldProps {
-    // Array of cell states.
-    cells: CellState[];
-    // handle shoot.
-    onShoot(id: number): void;
+  // Array of cell states.
+  cells: CellState[];
+  // handle shoot.
+  onShoot(id: number): void;
 }

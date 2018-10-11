@@ -1,13 +1,13 @@
 .game-field {
-    display: -webkit-flex;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    height: 100%;
-    width: 710px;
-    height: 710px;
-    min-width: 710px;
-    outline: 4px solid #FDB200;
-    border-right: 1px #979797 solid;
-    border-bottom: 1px #979797 solid;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 710px;
+  height: 710px;
+  min-width: 710px;
+  outline: 4px solid #FDB200;
+  border-right: 1px #979797 solid;
+  border-bottom: 1px #979797 solid;
 }

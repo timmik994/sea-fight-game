@@ -5,11 +5,11 @@ import { Dispatch } from 'redux';
 import { shootCell } from '../actions/shootAction';
 
 const mapStateToProps = (state: GameState) => ({
-    cells: state.cellStates
+  cells: state.cellStates
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-    onShoot: (id: number) => dispatch(shootCell(id))
+  onShoot: (id: number) => dispatch(shootCell(id))
 });
 
 export const GameFieldStatus = connect(mapStateToProps, mapDispatchToProps)(GameField);

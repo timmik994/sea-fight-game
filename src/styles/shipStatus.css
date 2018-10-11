@@ -1,36 +1,36 @@
 .ship-state {
-    display: -webkit-flex;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    flex: 1 0 auto;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex: 1 0 auto;
 }
 
 .ship {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-    width: 50%;
-    height: 65px;
-    margin-bottom: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 50%;
+  height: 65px;
+  margin-bottom: 30px;
 }
 
 .aircraft {
-    background-image: url("../pics/aircraft.png");
+  background-image: url("../pics/aircraft.png");
 }
 
 .battleship {
-    background-image: url("../pics/battleship.png");
+  background-image: url("../pics/battleship.png");
 }
 
 .cruiser {
-    background-image: url("../pics/cruiser.png");
+  background-image: url("../pics/cruiser.png");
 }
 
 .submarine {
-    background-image: url("../pics/submarine.png");
+  background-image: url("../pics/submarine.png");
 }
 
 .carrier {
-    background-image: url("../pics/carrier.png");
+  background-image: url("../pics/carrier.png");
 }

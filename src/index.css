@@ -1,4 +1,4 @@
-body{
+body {
   position: absolute;
   display: -webkit-flex;
   display: flex;
@@ -10,28 +10,26 @@ body{
   margin: 0;
 }
 
-@media (max-width:1200px){
-  .main-content{
+@media (max-width:1200px) {
+  .main-content {
     padding-right: 10px;
   }
-
   body {
     justify-content: flex-start;
   }
 }
 
-@media (max-height: 560px){
-  .main-content{
+@media (max-height: 560px) {
+  .main-content {
     padding-bottom: 10px;
   }
-
   body {
     align-content: flex-start;
     align-items: flex-start;
   }
 }
 
-@font-face{
+@font-face {
   font-family: Segoe UI;
   src: url("font/SegoeUI-Bold.ttf")
 }

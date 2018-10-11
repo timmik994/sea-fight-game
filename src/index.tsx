@@ -12,7 +12,7 @@ const newGameAction = createNewGameAction();
 store.dispatch(newGameAction);
 
 ReactDOM.render(
-  <Provider store = {store} >
+  <Provider store={store}>
     <App />
   </Provider>,
   document.getElementById('root') as HTMLElement
