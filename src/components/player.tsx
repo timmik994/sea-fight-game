@@ -28,7 +28,6 @@ export class Player extends React.Component<PlayerProps, {}> {
       default: return '';
     }
   }
-
 }
 
 interface PlayerProps {
