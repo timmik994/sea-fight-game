@@ -9,7 +9,7 @@ export const gameReducer: Reducer<GameState> = (state: GameState, action: Action
     state = initGameState();
   }
 
-  if (action.type === shootAction) {
+  if (action.type === shootAction && (action as ShootAction).cellState === CellState.Unshooted) {
     const cellStates = state.cellStates.slice();
     const shootedIndex = (action as ShootAction).cellIndex;
     const cellNum = state.shipsPositions[shootedIndex];

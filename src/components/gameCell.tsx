@@ -4,19 +4,8 @@ import '../styles/seaCell.css';
 
 // Cell in game field.
 export class GameCell extends React.Component<GameCellProps, GameCellState> {
-  constructor(props: GameCellProps) {
-    super(props);
-    this.shootCell = this.shootCell.bind(this);
-  }
-
   public render() {
-    return <div onClick={() => this.shootCell()} className={`cell ${this.getCellClass()}`} />;
-  }
-
-  private shootCell() {
-    if (this.props.state === CellState.Unshooted) {
-      this.props.onShoot(this.props.id);
-    }
+    return <div onClick={() => this.props.onShoot(this.props.id, this.props.state)} className={`cell ${this.getCellClass()}`} />;
   }
 
   // Gets cell class name from CellState.
@@ -41,5 +30,5 @@ interface GameCellProps {
   // Id of the cell
   id: number;
   // Shoot to cell
-  onShoot(id: number): void;
+  onShoot(id: number, cellState: CellState): void;
 }

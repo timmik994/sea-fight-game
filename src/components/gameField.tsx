@@ -20,5 +20,5 @@ export interface SeaFieldProps {
   // Array of cell states.
   cells: CellState[];
   // handle shoot.
-  onShoot(id: number): void;
+  onShoot(id: number, cellState: CellState): void;
 }
